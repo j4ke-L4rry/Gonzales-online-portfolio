@@ -803,3 +803,206 @@ body {
     .projects-content { padding: 1.5rem; }
     .projects-grid { grid-template-columns: 1fr; }
 }
+/* ── RESPONSIVE / MOBILE FIXES ── */
+
+/* Tablet (max 768px) */
+@media (max-width: 768px) {
+
+    /* Navbar — wrap links */
+    .navbar {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .navbar a {
+        font-size: 0.85rem;
+    }
+
+    /* Home — reduce padding */
+    .home-content {
+        padding: 1.5rem;
+    }
+
+    /* Hero divide — stack vertically */
+    .Divide {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    /* About — reduce padding */
+    .about-content {
+        padding: 1.5rem;
+    }
+
+    /* Contact — reduce padding */
+    .contact-content {
+        padding: 1.5rem;
+    }
+
+    /* Projects — reduce padding */
+    .projects-content {
+        padding: 1.5rem;
+    }
+
+    /* Photos — reduce padding */
+    .photos-content {
+        padding: 1.5rem;
+    }
+
+    /* Photos header — stack vertically */
+    .photos-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Welcome message */
+    .welcome-message {
+        font-size: 0.92rem;
+    }
+
+    /* Contact form box */
+    .contact-form-box {
+        padding: 1.2rem;
+    }
+}
+
+/* Mobile (max 480px) */
+@media (max-width: 480px) {
+
+    /* Navbar — smaller text, tighter gap */
+    .navbar {
+        gap: 0.4rem;
+        padding: 0.7rem 0.8rem;
+    }
+
+    .navbar a {
+        font-size: 0.78rem;
+        padding: 0.2em 0.4em;
+    }
+
+    /* Home content */
+    .home-content {
+        padding: 1rem;
+    }
+
+    /* Hero avatar — smaller on tiny screens */
+    .hero-avatar {
+        width: 110px;
+        height: 110px;
+    }
+
+    /* Headings */
+    .projects-title,
+    .photos-title,
+    .contact-title,
+    .about-content h2 {
+        font-size: 1.6rem;
+    }
+
+    /* About */
+    .about-content {
+        padding: 1rem;
+    }
+
+    /* Box inside about */
+    .box {
+        padding: 1.2rem;
+    }
+
+    /* Fav list — allow wrapping */
+    .fav-list li {
+        flex-wrap: wrap;
+    }
+
+    /* Contact */
+    .contact-content {
+        padding: 1rem;
+    }
+
+    .contact-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form-box {
+        padding: 1rem;
+    }
+
+    /* Nav cards on home — single column */
+    .nav-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Projects */
+    .projects-content {
+        padding: 1rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-tabs {
+        gap: 0.4rem;
+    }
+
+    .filter-btn {
+        font-size: 0.75rem;
+        padding: 0.4em 0.9em;
+    }
+
+    /* Photos */
+    .photos-content {
+        padding: 1rem;
+    }
+
+    /* Lightbox nav buttons — smaller on mobile */
+    .lightbox-nav {
+        width: 34px;
+        height: 34px;
+        font-size: 1rem;
+    }
+
+    .lightbox-prev { left: 0.4rem; }
+    .lightbox-next { right: 0.4rem; }
+
+    .lightbox-img {
+        max-width: 95vw;
+        max-height: 70vh;
+    }
+
+    /* Footer */
+    .footer {
+        font-size: 0.75rem;
+        padding: 0.8rem 1rem;
+    }
+}
+
+/* Very small screens (max 360px) */
+@media (max-width: 360px) {
+
+    .navbar a {
+        font-size: 0.72rem;
+    }
+
+    .hero-avatar {
+        width: 90px;
+        height: 90px;
+    }
+
+    .projects-title,
+    .photos-title,
+    .contact-title,
+    .about-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .home-content,
+    .about-content,
+    .contact-content,
+    .projects-content,
+    .photos-content {
+        padding: 0.8rem;
+    }
+}

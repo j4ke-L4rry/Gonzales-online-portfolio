@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Jake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main class="projects-content">
+
+        <div class="projects-header">
+            <h2 class="projects-title">My <span>Projects</span></h2>
+            <div class="section-line"></div>
+            <p class="projects-sub">A collection of things I've built and worked on — from school assignments to personal experiments.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+            <button class="filter-btn active" onclick="filterProjects('all', this)">All</button>
+            <button class="filter-btn" onclick="filterProjects('school', this)">School</button>
+            <button class="filter-btn" onclick="filterProjects('personal', this)">Personal</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+
+            <!-- Personal: This Portfolio -->
+            <div class="project-card" data-category="personal">
+                <div class="project-thumb" style="background: linear-gradient(135deg, #162019, #1c2a21);">
+                    <img src="assets/web.png" alt="Portfolio Thumbnail" class="project-thumb-icon">
+                    <span class="project-badge personal">Personal</span>
+                </div>
+                <div class="project-body">
+                    <div class="project-tag">Html . Css</div>
+                    <h3 class="project-name">Personal Portfolio Website</h3>
+                    <p class="project-desc">My first web project — built using HTML and CSS to introduce myself.</p>
+                    <div class="project-links">
+                        <a href="index.html" class="project-link primary">View Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- School: Placeholder 1 -->
+            <div class="project-card" data-category="school">
+                <div class="project-thumb" style="background: linear-gradient(135deg, #0d1a2a, #0d2a1a);">
+                    <img src="assets/quote.jpg" alt="Quotations Thumbnail" class="project-thumb-icon">
+                    <span class="project-badge school">School</span>
+                </div>
+                <div class="project-body">
+                    <div class="project-tag">CS 123T (Web Development)</div>
+                    <h3 class="project-name">Quotations</h3>
+                    <p class="project-desc">Our instructor asked us to create a collection of inspiring quotes we found online. This activity is created by using html and css.</p>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/drive/folders/16DCRWEmev8Aidmf7DJ_NioTm6PmJ0h59?usp=sharing" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- School: Placeholder 2 -->
+            <div class="project-card" data-category="school">
+                <div class="project-thumb" style="background: linear-gradient(135deg, #1a0d2a, #2a0d1a);">
+                    <img src="assets/article.jpg" alt="Articles Thumbnail" class="project-thumb-icon">
+                    <span class="project-badge school">School</span>
+                </div>
+                <div class="project-body">
+                    <div class="project-tag">CS 123T (Web Development)</div>
+                    <h3 class="project-name">Articles</h3>
+                    <p class="project-desc">Our instructor asked us to create articles and style them using html and css.</p>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/drive/folders/1ez0b6gXYhPsqYi30pvqC2PjifKTsc7LP?usp=sharing" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal: Placeholder -->
+            <div class="project-card" data-category="personal">
+                <div class="project-thumb" style="background: linear-gradient(135deg, #1a1a0d, #2a1a0d);">
+                    <img src="assets/calculator.jpg" alt="Calculator Thumbnail" class="project-thumb-icon">
+                    <span class="project-badge personal">Personal</span>
+                </div>
+                <div class="project-body">
+                    <div class="project-tag">HTML. CSS. JavaScript</div>
+                    <h3 class="project-name">Calculator</h3>
+                    <p class="project-desc">A simple calculator built with HTML, CSS, and JavaScript    .</p>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/drive/folders/1arkJuXcXf2EwfpL3jbhkbom8zy507Zql?usp=sharing" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- School: Placeholder 3 -->
+            <div class="project-card" data-category="school">
+                <div class="project-thumb" style="background: linear-gradient(135deg, #0d1a1a, #0d2a2a);">
+                    <img src="assets/Tagbilaran-City.jpg" alt="Map Thumbnail" class="project-thumb-icon">
+                    <span class="project-badge school">School</span>
+                </div>
+                <div class="project-body">
+                    <div class="project-tag">CS 123T (Web Development)</div>
+                    <h3 class="project-name">MAP</h3>
+                    <p class="project-desc">Our instructor asked us to download a map and use coordinates to mark locations.</p>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/drive/folders/1VV3foBjQwaLHa56mQsq76OcCagSHo8CC?usp=sharing" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card" data-category="personal">
+                <div class="project-thumb" style="background: linear-gradient(135deg, #1a1a0d, #2a1a0d);">
+                    <img src="assets/chad.jpg" alt="Calculator Thumbnail" class="project-thumb-icon">
+                    <span class="project-badge personal">Personal</span>
+                </div>
+                <div class="project-body">
+                    <div class="project-tag">HTML. CSS. JavaScript</div>
+                    <h3 class="project-name">Gwapo ko?</h3>
+                    <p class="project-desc">A fun project to test my skills. The no button hovers away from the cursor.</p>
+                    <div class="project-links">
+                        <a href="https://drive.google.com/drive/folders/1GDIVYhT2mKhsfuE4s5xDE11lgfAVxgWS?usp=sharing" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add More Card -->
+            <div class="project-card add-card" data-category="all">
+                <div class="project-thumb" style="background: var(--surface2); border: 2px dashed var(--border);">
+                    <span class="project-thumb-icon" style="opacity:0.4;">＋</span>
+                </div>
+                <div class="project-body">
+                    <div class="project-tag">Your next project</div>
+                    <h3 class="project-name" style="color: var(--text-muted);">More Coming Soon</h3>
+                    <p class="project-desc">As you grow in CS, this space will fill up. Every project is a step forward.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">University of Bohol · C. Putong St, Tagbilaran City, 6300 Bohol</footer>
+
+    <script>
+        function filterProjects(category, btn) {
+            // Update active button
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Show/hide cards
+            document.querySelectorAll('.project-card').forEach(card => {
+                const cat = card.getAttribute('data-category');
+                if (category === 'all' || cat === category || cat === 'all') {
+                    card.style.display = 'flex';
+                    card.style.animation = 'fadeInCard 0.3s ease both';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

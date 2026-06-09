@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Circle — Jake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main class="photos-content">
+
+        <div class="photos-header">
+            <div>
+                <h2 class="photos-title">My <span>Circle</span></h2>
+                <div class="section-line"></div>
+            </div>
+        </div>
+
+        <p class="photos-sub">The people and moments that matter most to me — click any photo to view full size.</p>
+
+        <div class="masonry-grid">
+
+            <div class="masonry-item" onclick="openLightbox(0)">
+                <img src="assets/vin.jpeg" alt="Vin" loading="lazy">
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(1)">
+                <img src="assets/siblings.JPG" alt="My Siblings" loading="lazy">
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(2)">
+                <img src="assets/maome.jpeg" alt="Maome" loading="lazy">
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(4)">
+                <img src="assets/cats.JPG" alt="Cats" loading="lazy">
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(5)">
+                <img src="assets/ruth.JPG" alt="Ruth" loading="lazy">
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(6)">
+                <img src="assets/maome2.jpeg" alt="Maome 2" loading="lazy">
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(7)">
+                <img src="assets/wedding.jpg" alt="Wedding" loading="lazy">
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(8)">
+                <img src="assets/lolas.jpg" alt="Lolas" loading="lazy">
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(9)">
+                <img src="assets/tricycle.JPG" alt="Tricycle" loading="lazy">
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(10)">
+                <img src="assets/mother.JPG" alt="Mother" loading="lazy">
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox" onclick="handleOverlayClick(event)">
+        <img class="lightbox-img" id="lightbox-img" src="" alt="">
+        <p class="lightbox-counter" id="lightbox-counter"></p>
+    </div>
+
+    <button class="lightbox-close" id="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" onclick="changePhoto(-1)">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" onclick="changePhoto(1)">›</button>
+
+    <footer class="footer">University of Bohol · C. Putong St, Tagbilaran City, 6300 Bohol</footer>
+
+    <script>
+        const photos = [
+            { src: 'vin.jpeg' },
+            { src: 'siblings.JPG' },
+            { src: 'maome.jpeg' },
+            { src: 'cats.JPG' },
+            { src: 'ruth.JPG' },
+            { src: 'maome2.jpeg' },
+            { src: 'wedding.jpg' },
+            { src: 'lolas.jpg' },
+            { src: 'tricycle.JPG' },
+            { src: 'mother.JPG' },
+        ];
+
+        let current = 0;
+
+        function openLightbox(index) {
+            current = index;
+            updateLightbox();
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightbox-close').style.display = 'flex';
+            document.getElementById('lightbox-prev').style.display  = 'flex';
+            document.getElementById('lightbox-next').style.display  = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.getElementById('lightbox-close').style.display = 'none';
+            document.getElementById('lightbox-prev').style.display  = 'none';
+            document.getElementById('lightbox-next').style.display  = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function changePhoto(dir) {
+            current = (current + dir + photos.length) % photos.length;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightbox-img').src = photos[current].src;
+            document.getElementById('lightbox-counter').textContent = (current + 1) + ' / ' + photos.length;
+        }
+
+        function handleOverlayClick(e) {
+            if (e.target === document.getElementById('lightbox')) closeLightbox();
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'ArrowRight') changePhoto(1);
+            if (e.key === 'ArrowLeft')  changePhoto(-1);
+            if (e.key === 'Escape')     closeLightbox();
+        });
+
+        document.getElementById('lightbox-close').style.display = 'none';
+        document.getElementById('lightbox-prev').style.display  = 'none';
+        document.getElementById('lightbox-next').style.display  = 'none';
+    </script>
+
+</body>
+</html>

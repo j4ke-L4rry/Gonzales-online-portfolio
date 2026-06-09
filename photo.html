@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos — Jake</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main class="photos-content">
+
+        <div class="photos-header">
+            <div>
+                <h2 class="photos-title">Mobile <span>Photography</span></h2>
+                <div class="section-line"></div>
+            </div>
+            
+        </div>
+
+        <p class="photos-sub">A collection of shots from my Pinterest — click any photo to view full size.</p>
+
+        <!-- Masonry Grid -->
+        <div class="masonry-grid">
+
+            <div class="masonry-item" onclick="openLightbox(0)">
+                <img src="https://i.pinimg.com/736x/db/79/02/db790263a6957e29f4ae4c3a5c10edbc.jpg" alt="Shot 1" loading="lazy">
+                <div class="masonry-caption">Shot 01 <span>📷 Mobile</span></div>
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(1)">
+                <img src="https://i.pinimg.com/736x/b2/0a/be/b20abe9a319782ec058b21eea62968bc.jpg" alt="Shot 2" loading="lazy">
+                <div class="masonry-caption">Shot 02 <span>📷 Mobile</span></div>
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(2)">
+                <img src="https://i.pinimg.com/736x/1f/21/3e/1f213e56bf6757be7591115e8c3889bf.jpg" alt="Shot 3" loading="lazy">
+                <div class="masonry-caption">Shot 03 <span>📷 Mobile</span></div>
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(3)">
+                <img src="https://i.pinimg.com/474x/ba/eb/ab/baebab529b6458da7c25f032e2d6547a.jpg" alt="Shot 4" loading="lazy">
+                <div class="masonry-caption">Shot 04 <span>📷 Mobile</span></div>
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(4)">
+                <img src="https://i.pinimg.com/474x/71/f1/0a/71f10a47276b99a9f14c89be017e7e27.jpg" alt="Shot 5" loading="lazy">
+                <div class="masonry-caption">Shot 05 <span>📷 Mobile</span></div>
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(5)">
+                <img src="https://i.pinimg.com/736x/a9/fd/f9/a9fdf90c013fcd403adc9806becd8fe4.jpg" alt="Shot 6" loading="lazy">
+                <div class="masonry-caption">Shot 06 <span>📷 Mobile</span></div>
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(6)">
+                <img src="https://i.pinimg.com/736x/92/0c/59/920c595ca2f1ac2841f892408e14c8a7.jpg" alt="Shot 7" loading="lazy">
+                <div class="masonry-caption">Shot 07 <span>📷 Mobile</span></div>
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(7)">
+                <img src="https://i.pinimg.com/736x/d5/81/48/d58148dac7355238e46509624e56feb6.jpg" alt="Shot 8" loading="lazy">
+                <div class="masonry-caption">Shot 08 <span>📷 Mobile</span></div>
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(8)">
+                <img src="https://i.pinimg.com/736x/fb/40/50/fb4050d4402f6417635bd79069dcc0b2.jpg" alt="Shot 9" loading="lazy">
+                <div class="masonry-caption">Shot 09 <span>📷 Mobile</span></div>
+            </div>
+
+            <div class="masonry-item" onclick="openLightbox(9)">
+                <img src="https://i.pinimg.com/736x/6e/d2/cd/6ed2cdd9c369e4944c5c35098ca64705.jpg" alt="Shot 10" loading="lazy">
+                <div class="masonry-caption">Shot 10 <span>📷 Mobile</span></div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" id="lightbox" onclick="handleOverlayClick(event)">
+        <img class="lightbox-img" id="lightbox-img" src="" alt="">
+        <p class="lightbox-caption" id="lightbox-caption"></p>
+        <p class="lightbox-counter" id="lightbox-counter"></p>
+    </div>
+
+    <button class="lightbox-close" id="lightbox-close" onclick="closeLightbox()">✕</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" onclick="changePhoto(-1)">‹</button>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" onclick="changePhoto(1)">›</button>
+
+    <footer class="footer">University of Bohol · C. Putong St, Tagbilaran City, 6300 Bohol</footer>
+
+    <script>
+        const photos = [
+            { src: 'https://i.pinimg.com/736x/db/79/02/db790263a6957e29f4ae4c3a5c10edbc.jpg', caption: 'Shot 01 — Mobile Photography' },
+            { src: 'https://i.pinimg.com/736x/b2/0a/be/b20abe9a319782ec058b21eea62968bc.jpg', caption: 'Shot 02 — Mobile Photography' },
+            { src: 'https://i.pinimg.com/736x/1f/21/3e/1f213e56bf6757be7591115e8c3889bf.jpg', caption: 'Shot 03 — Mobile Photography' },
+            { src: 'https://i.pinimg.com/474x/ba/eb/ab/baebab529b6458da7c25f032e2d6547a.jpg', caption: 'Shot 04 — Mobile Photography' },
+            { src: 'https://i.pinimg.com/474x/71/f1/0a/71f10a47276b99a9f14c89be017e7e27.jpg', caption: 'Shot 05 — Mobile Photography' },
+            { src: 'https://i.pinimg.com/736x/a9/fd/f9/a9fdf90c013fcd403adc9806becd8fe4.jpg', caption: 'Shot 06 — Mobile Photography' },
+            { src: 'https://i.pinimg.com/736x/92/0c/59/920c595ca2f1ac2841f892408e14c8a7.jpg', caption: 'Shot 07 — Mobile Photography' },
+            { src: 'https://i.pinimg.com/736x/d5/81/48/d58148dac7355238e46509624e56feb6.jpg', caption: 'Shot 08 — Mobile Photography' },
+            { src: 'https://i.pinimg.com/736x/fb/40/50/fb4050d4402f6417635bd79069dcc0b2.jpg', caption: 'Shot 09 — Mobile Photography' },
+            { src: 'https://i.pinimg.com/736x/6e/d2/cd/6ed2cdd9c369e4944c5c35098ca64705.jpg', caption: 'Shot 10 — Mobile Photography' },
+        ];
+
+        let current = 0;
+
+        function openLightbox(index) {
+            current = index;
+            updateLightbox();
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightbox-close').style.display = 'flex';
+            document.getElementById('lightbox-prev').style.display = 'flex';
+            document.getElementById('lightbox-next').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.getElementById('lightbox-close').style.display = 'none';
+            document.getElementById('lightbox-prev').style.display = 'none';
+            document.getElementById('lightbox-next').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function changePhoto(dir) {
+            current = (current + dir + photos.length) % photos.length;
+            updateLightbox();
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightbox-img').src = photos[current].src;
+            document.getElementById('lightbox-img').alt = photos[current].caption;
+            document.getElementById('lightbox-caption').textContent = photos[current].caption;
+            document.getElementById('lightbox-counter').textContent = (current + 1) + ' / ' + photos.length;
+        }
+
+        function handleOverlayClick(e) {
+            if (e.target === document.getElementById('lightbox')) closeLightbox();
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'ArrowRight') changePhoto(1);
+            if (e.key === 'ArrowLeft')  changePhoto(-1);
+            if (e.key === 'Escape')     closeLightbox();
+        });
+
+        // Hide nav buttons initially
+        document.getElementById('lightbox-close').style.display = 'none';
+        document.getElementById('lightbox-prev').style.display  = 'none';
+        document.getElementById('lightbox-next').style.display  = 'none';
+    </script>
+
+</body>
+</html>

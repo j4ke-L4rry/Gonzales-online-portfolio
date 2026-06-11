@@ -1,0 +1,97 @@
+.background {
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    height: 100vh;
+    margin: 0;
+}
+
+.computer {
+    height: 100vh;
+    position: relative;
+}
+
+.pc {
+    width: 80%;
+    max-width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Screen article box */
+.screen {
+    font-family: "matrix", sans-serif;
+
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 30%;
+    height: 45%;
+
+    color: rgb(34,146,3);
+    z-index: 2;
+
+    border: 1px solid black;
+    background-color: black;
+    background-image: url(screen.gif);
+    background-size: cover;
+
+    padding: 15px;
+    box-sizing: border-box;
+
+    overflow-y: auto;
+
+    font-size: 12px;
+    line-height: 1.4;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Welcome text */
+.welcome {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+/* ARTICLE LINKS ONLY */
+.screen-link {
+    display: block;
+    text-decoration: none;
+    color: rgb(34,146,3);
+}
+
+.screen-link:hover {
+    background-color: rgb(47,15,15);
+}
+
+/* BUTTONS ON OTHER PAGES */
+.press {
+    font-family: "matrix", sans-serif;
+    background-color: black;
+    color: rgb(34,146,3);
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.nav-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    margin-top:15px;
+}
+
+.nav-buttons a{
+    text-decoration:none;
+    color:rgb(34,146,3);
+}
